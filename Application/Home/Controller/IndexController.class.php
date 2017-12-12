@@ -1,8 +1,15 @@
 <?php
+/*
+ * 采用驼峰命名，注意首字母大写
+ */
+
+//使用相同的命名空间，Home代表Home模块
 namespace Home\Controller;
 
+//加载
 use Think\Controller;
 
+//新建控制器
 class IndexController extends Controller {
 
     public function index(){
@@ -14,11 +21,21 @@ class IndexController extends Controller {
         echo "read page with ".$id;
     }
 
-    public function top(){
+    public function archive($year,$month){
 
+        echo "$year".$month;
+    }
+
+    public function _before_top(){
+        echo "before top page";
+    }
+
+    public function top(){
         echo "top page";
     }
-    
-   
+
+    public function _after_top(){
+        echo "after top page";
+    }
 
 }
