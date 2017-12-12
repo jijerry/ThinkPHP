@@ -5,9 +5,11 @@ return array(
 
     //路由重写
     'URL_ROUTE_RULES'=>array(
-        'blogs/:id' => array('Index/read'),
-        'article/:id' => array('Article/show')
+        'blogs/:id\d' => array('Index/read'),
+        'blogs/:year/:month/:day' => array('Index/archive','status=1')
     ),
+
+    //静态路由
     'URL_MAP_RULES'=>array(
         'new/top' => 'Index/top?type=top'
     ),
@@ -20,6 +22,5 @@ return array(
     'DB_PWD' => '',
     'DB_PORT' => '3306',
     'DB_PREFIX' => 'think_',
-    ///
 
 );
