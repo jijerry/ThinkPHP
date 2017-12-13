@@ -67,6 +67,43 @@ class UserController extends Controller{
 //        $record = $user->delete('1,2,3,5'); //删除主键1,2,3,5记录
 //        dump($record);
 
+        //自动完成数机制
+//
+//        $user = D('User');
+//        $data['username'] = 'jerry6';
+//        $data['email'] = 'jerry6@gmail.com';
+//        $user->create($data);       //创建数据对象
+//        $record = $user->add();
+//        dump($record);
+//
+//        $user = D('User');
+//        $record = $user->find(id);
+//        dump($record);
+
+        $user = D('User');
+        $record = $user->relation(true)->find(4);
+        dump($record);
+
+    }
+
+    public function register(){
+
+        $this->display();       //相应的视图文件渲染出来
+    }
+
+    public function registerValidate()
+    {
+        $data['username'] = $_POST['username'];
+        $data['email'] = $_POST['email'];
+
+        $user = D("User");
+
+        if ( !$user->create($data) ) {      //触发自动验证并判断验证是否通过
+            exit($user->getError());
+        }
+        //todo: validation passes, add data to database and redirect somewhere
+
+        echo 'validation passes';
 
     }
 }
