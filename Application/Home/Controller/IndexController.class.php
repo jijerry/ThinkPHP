@@ -48,17 +48,31 @@ class IndexController extends Controller {
         $data['username'] = 'Think';
         $data['email'] = 'Think@gmail.com';
         $result =$User->add($data);
-        $result =1;
 
         if (!$result){
 
             $this->success('success','Home/User/addUser');
         }else{
-            $this->error('failed','Home/Article/error',5);
+            $this->error('failed','Home/Article/error',10);
         }
     }
 
     //重定向
+
+    /**
+     * 控制器的redirect方法和redirect函数区别
+     * 前者使用URL规则定义跳转地址
+     * 后者是一个URL地址
+     */
+    public function redirectToArticle(){
+
+        $this->redirect('/Home/Article/show',array('id'=>2),3,'Redirecting...');    //重定向到模块中的方法
+        $this->redirect('/Home/Article/show/id/3','redirecting...',3);  //重定向指定URL地址
+    }
+
+
+
+
     
 
 }
