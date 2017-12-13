@@ -15,7 +15,7 @@ return array(
     ),
 
     //数据库参数
-    'DB_TYPE' => 'mysql',
+    'DB_TYPE' => 'mysqli',
     'DB_HOST' => 'localhost',
     'DB_NAME' => 'think',
     'DB_USER' => 'root',

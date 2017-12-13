@@ -17,8 +17,10 @@ use Think\Model;
 
 class UserModel extends Model{
 
-    public function testDemo(){
+//    protected $_auto = array (
+//        array('created_at','date("Y-m-d H:i:s", time())',3,'function'),
+//        array('updated_at','date("Y-m-d H:i:s", time())',3,'function'),
+//    );
 
-    }
 
 }
