@@ -24,8 +24,8 @@ class UserModel extends Model{
     );
 
     //添加关联模型
-    protected $_link = array(
-        'Article' =>self::HAS_MANY
-    );
+//    protected $_link = array(
+//        'Article' =>self::HAS_MANY
+//    );
 
 }

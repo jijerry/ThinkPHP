@@ -12,8 +12,8 @@ use Think\Model;
 
 class ArticleModel extends Model{
 
-    protected $_link = array(
-
-        'User' => self::BELONGS_TO
-    );
+//    protected $_link = array(
+//
+//        'User' => self::BELONGS_TO
+//    );
 }
