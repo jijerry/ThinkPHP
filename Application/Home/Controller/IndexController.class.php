@@ -79,6 +79,7 @@ class IndexController extends Controller {
         $this->assign('user',$userInfo);    //'user'传递给视图的变量名
 
         $this->display();   //自动寻找在这个控制器之下的具体操作的视图（方法名一样的视图文件）
+        $this->theme('blue')->display('Index:edit');    //调用blue主题下面的Index控制器的edit视图文件
 
     }
 
