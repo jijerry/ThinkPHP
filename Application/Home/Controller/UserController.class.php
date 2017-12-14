@@ -23,7 +23,7 @@ class UserController extends Controller{
 //        $user = M('User');
 //        $data['username'] = 'jerry1';
 //        $data['email'] = 'jerry1@gmail.com';
-//        $user->create($data);
+//        $user->create($data);         //创建数据对象时会触发自动完成数机制
 //        $record = $user->add();     //add返回的是插入数据库中的ID，对于不存在的表字段，add会自动过滤
 //        dump($record);
 
@@ -68,7 +68,7 @@ class UserController extends Controller{
 //        dump($record);
 
         //自动完成数机制
-//
+
 //        $user = D('User');
 //        $data['username'] = 'jerry6';
 //        $data['email'] = 'jerry6@gmail.com';
@@ -79,7 +79,7 @@ class UserController extends Controller{
 //        $user = D('User');
 //        $record = $user->find(id);
 //        dump($record);
-
+//
         $user = D('User');
         $record = $user->relation(true)->find(4);
         dump($record);

@@ -8,12 +8,13 @@
 
 namespace Home\Model;
 
-use Think\Model;
+use Think\Model\RelationModel;
 
-class ArticleModel extends Model{
+class ArticleModel extends RelationModel{
 
-//    protected $_link = array(
-//
-//        'User' => self::BELONGS_TO
-//    );
+    //关联模型查询数据库
+    protected $_link = array(
+
+        'User' => self::BELONGS_TO
+    );
 }

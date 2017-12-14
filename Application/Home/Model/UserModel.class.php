@@ -13,19 +13,19 @@
 
 namespace Home\Model;
 
-use Think\Model;
+use Think\Model\RelationModel;
 
-class UserModel extends Model{
+class UserModel extends RelationModel{
 
-    //自动完成数据处理和过滤
+    //自动完成数据处理和过滤（添加时间戳，安全字段过滤，业务逻辑自动处理）
     protected $_auto = array (
         array('created_at','date("Y-m-d H:i:s", time())',3,'function'),
         array('updated_at','date("Y-m-d H:i:s", time())',3,'function'),
     );
 
     //添加关联模型
-//    protected $_link = array(
-//        'Article' =>self::HAS_MANY
-//    );
+    protected $_link = array(
+        'Article' =>self::HAS_MANY
+    );
 
 }
