@@ -72,16 +72,25 @@ class IndexController extends Controller {
 
     public function index(){
 
-        $user = D('User');
+//        $user = D('User');
+//
+//        $userInfo = $user->find(101);
+//
+//        $this->assign('user',$userInfo);    //'user'传递给视图的变量名
+//
+//        $this->display();   //自动寻找在这个控制器之下的具体操作的视图（方法名一样的视图文件）
+//        $this->theme('blue')->display('Index:edit');    //调用blue主题下面的Index控制器的edit视图文件
 
-        $userInfo = $user->find(101);
 
-        $this->assign('user',$userInfo);    //'user'传递给视图的变量名
-
-        $this->display();   //自动寻找在这个控制器之下的具体操作的视图（方法名一样的视图文件）
-        $this->theme('blue')->display('Index:edit');    //调用blue主题下面的Index控制器的edit视图文件
+        //volist用于查询结果集select的输出
+        $user = M('User');
+        $list = $user->limit(100)->select();
+        $this->assign('list',$list);
+        $this->display();
 
     }
+
+
 
 
 }

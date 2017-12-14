@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传</title>
+</head>
+<body>
+<extend name="Index/base" />
+<block name="main" >
+    <form method="post" action="__URL__/uploadFile" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="exampleInputFile">Choose file</label>
+            <input type="file" name="file" class="form-control" id="exampleInputFile">
+            <p class="help_block">Chose your file to upload</p>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</block>
+
+</body>
+</html>

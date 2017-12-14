@@ -2,6 +2,14 @@
 <head><title>IndexController index</title></head>
 <body>
 <h1>This is IndexController index view !!!</h1>
-{$user['email']}
+<!--系统采用编译机制
+对变量进行操作的时候，不再支持取属性的点语法-->
+<!--{$user['email']}-->
+
+<volist name="list" id="vo">
+    {$vo.username}：{$vo.email}
+    <br/>
+
+</volist>
 </body>
 </html>
